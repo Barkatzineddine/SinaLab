@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/patient.css" />
+    <link rel="stylesheet" href="/css/medecin.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <%- include('partials/nav.ejs') %>
+
+    <div class="patiet-list-con-section">
+      <div class="medecin-con-info">
+        <img alt="" src="<%=patient.photo%>" />
+        <div class="con-info-container">
+          <h3><%= patient.username %></h3>
+          <h3><%= patient.email%></h3>
+        </div>
+      </div>
+      <% if(user.type==="Admin"){ %>
+      <h2>medecins associee</h2>
+      <div class="patient-of-medecin-con">
+        <% for (let medecin of patient.medecins){ %>
+            <article>
+                <div>
+                  <img alt="" src="<%=medecin.photo%>" />
+                  <a href="/medecins/<%=medecin._id%>"> <%=medecin.username%></a>
+                </div>
+                <span><%=medecin.email%></span>
+                <span><%=medecin.phone%></span>
+            </article>
+        
+    
+          <% } %>
+      </div> <% } %>
+
+      <h2>Results</h2>
+    <div class="section-con-result">
+      <% for (let result of patient.results){ %>
+        <div class="article-con-result">
+          <a href="/results/<%=result._id%>"> <%=result.name%> </a>
+         <div>
+          <form action="/results/<%=result._id%>" method="POST">
+              <button><img alt="" src="/icons8-download.png"></button>
+            </form>
+    
+            <form action="/results/<%=result._id%>?_method=DELETE" method="POST">
+              <button><img alt="" src="/icons8trash.svg"></button>
+            </form>
+         </div>
+        </div>
+  
+        <% } %>
+    </div>
+    </div>
+  </body>
+</html>

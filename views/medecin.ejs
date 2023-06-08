@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/medecin.css" />
+    
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/nav.ejs') %>
+<div class="medecin-section">
+    <div class="medecin-con-info">
+        <img alt="" src="<%=medecin.photo%>"/>
+        <div class="con-info-container">
+            <h3><%= medecin.username %></h3>
+        <h3><%= medecin.email%></h3>
+        </div>
+    </div>
+<h2>les patients asocie</h2>
+    <div class="patient-of-medecin-con">
+        <% for (let patient of medecin.patients){ %>
+            <article>    
+
+                
+                  <div> 
+                    <img alt="" src="<%=patient.photo%>">
+                  <a href="/patients/<%=patient._id%>"> <%=patient.username%></a>
+                  </div>
+                   <span><%=patient.email%></span>
+                   <span><%=patient.phone%></span>
+                   
+                   
+                
+    
+                </article>
+        
+        
+            <% } %>
+    </div>
+</div>
+   
+
+
+    
+</body>
+</html>

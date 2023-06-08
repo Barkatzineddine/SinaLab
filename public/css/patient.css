@@ -1,0 +1,68 @@
+.patiet-list-con-section{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+.patiet-list-con-section h2{
+    font-size: 25px;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-family: 'Poppins';
+    margin: 5px auto;
+}
+.section-con-result{
+    width: 70%;
+        overflow-y: scroll;
+        height: fit-content;
+        max-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    border-radius: 5px;
+    margin: 30px auto;
+    padding: 20px 25px;
+    gap: 10px;
+}
+.section-con-result::-webkit-scrollbar{
+    display: none;
+  }
+.article-con-result{
+    display: flex;
+        justify-content: space-between;
+       position: relative;
+        padding: 10px 10px 10px 20px;
+        align-items: center;
+        width: 80%;
+        background: #FFFFFF;
+        border: 1px solid #D8D8D8;
+}
+.article-con-result::before{
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    left: 13px;
+    display: inline-block;
+    background: #740606;
+}
+.article-con-result div{
+    display: flex;
+}
+.article-con-result >a{
+    text-decoration: none;
+    color: black;
+}
+.article-con-result form button{
+    background-color: #FFFFFF;
+
+    border: none;
+    padding: 3px 8px;
+    cursor: pointer;
+    margin-left: 10px;
+}

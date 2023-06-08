@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/patientlist.css" />
+    <link rel="stylesheet" href="/css/demanderec.css" />
+    <title>SinaLab</title>
+</head>
+<body>
+    
+    <%- include('partials/nav.ejs') %>
+    <section class="partientlist-section">
+        <p style="text-align: center; color: green; font-size: 13px; z-index: 1111; position: absolute;top: 10px; left: 40%;"><%=success%></p>
+    <p style="text-align: center; color: red; font-size: 13px; z-index: 1111; position: absolute;top: 10px; left: 40%;"><%=error%></p>
+        <div class="partientlist-section-part1">
+    <div>
+    <h2>Bienvenu  ,<%=user.type%> - <%=user.username%></h2>
+    <p>
+        Une autre phrase pour souhaiter la bienvenue ou je ne sais quoi mais
+        c’est une phrase
+      </p>
+    </div>
+    </div>
+    <div class="demanderec-section-part2">
+        <h2>Demandes de recrutement</h2>
+    </div>
+    <div class="demanderec-section-part3">
+    <% for (let recru of recrutements){ %>
+    <div  class="recbox"> 
+
+        <div class="recbox-part1">
+            <h3><%=recru.profession%></h3>
+            <form action="/recrutement/<%=recru._id%>?_method=DELETE" method="POST">
+                <button><img alt="" src="roundsupp.svg"></button>
+            </form> 
+           
+        </div>
+        <div class="recbox-part2">
+            <h4> <%=recru.name%> </h4>
+            <p>Veuillez inspecter le cv et la lettre de motivation délivrés suite à l’annonce de recrutement
+            </p>
+        </div>
+
+        
+        
+        <div class="recbox-part3">
+            <div class="select-menu">
+                <div class="select-btn">
+                    <span class="sBtn-text">CV</span>
+                    <i class="bx bx-chevron-down"></i>
+                </div>
+                <ul class="options">
+                    <li class="option">
+                      
+                        <span class="option-text"><form action="/recrutement/cv/<%=recru._id%>" method="POST">
+                            <button>telecharger</button>
+                        </form> </span>
+                    </li>
+                    <li class="option">
+                        <span class="option-text">
+                            <a href="/recrutement/cv/<%=recru._id%>"
+                                >view</a></span>
+                    </li>
+                </ul>
+            <!-- <form action="/recrutement/cv/<%=recru._id%>" method="POST">
+                <button><i class='bx bx-download' style='color: #fff;'  ></i></button>
+                <p>CV</p>
+                <a href="/recrutement/cv/<%=recru._id%>"
+                    ><i class='bx bx-show' style='color: #fff;' ></i></a>
+            </form> 
+            <form action="/recrutement/ldm/<%=recru._id%>" method="POST">
+                <button><i class='bx bx-download' style='color:#fff'  ></i></button>
+                <p>LM</p>
+                <a href="/recrutement/ldm/<%=recru._id%>"
+                    ><i class='bx bx-show' style='color: #fff;' ></i></a>
+            </form>  -->
+            
+       
+        </div>
+        <div class="select-menu-2">
+            <div class="select-btn-2">
+                <span class="sBtn-text">LDM</span>
+                <i class="bx bx-chevron-down"></i>
+            </div>
+            <ul class="options">
+                <li class="option">
+                    <span class="option-text"><form action="/recrutement/ldm/<%=recru._id%>" method="POST">
+                        <button>Telecharger</button>
+                    </form> </span>
+                </li>
+                <li class="option">
+                    <span class="option-text">
+                        <a href="/recrutement/ldm/<%=recru._id%>">view</a></span>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+
+</div>
+    <% } %>
+    
+
+
+    
+</section>
+   <script>
+    const divs = document.querySelectorAll(".recbox");
+    const optionMenu = document.querySelectorAll(".select-menu");
+    const optionMenu2 = document.querySelectorAll(".select-menu-2");
+    const selectBtn = document.querySelectorAll(".select-btn");
+    const selectBtn2 = document.querySelectorAll(".select-btn-2");
+    const options = document.querySelectorAll(".option");
+    const sBtn_text = document.querySelectorAll(".sBtn-text");
+   
+ for(let option1 of optionMenu){
+    
+    option1.querySelector(".select-btn").addEventListener("click",(e)=>{
+
+        option1.classList.toggle("active")
+
+    })
+     
+} 
+
+ for(let option2 of optionMenu2) {
+    option2.querySelector(".select-btn-2").addEventListener("click",(e)=>{
+
+option2.classList.toggle("active")
+
+})
+ }
+
+
+
+   </script> 
+</body>
+</html>

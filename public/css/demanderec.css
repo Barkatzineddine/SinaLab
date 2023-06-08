@@ -1,0 +1,183 @@
+.demanderec-section-part2>h2{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+line-height: 52px;
+color: #740606;
+margin-left: 50px;
+width: fit-content;
+padding:2px 0;
+border-bottom: 4px solid #740606;
+}
+.demanderec-section-part3{
+    display: grid;
+    width: 90%;
+    justify-content: center;
+    grid-template-columns: 30% 30% 30%;
+    margin: 60px auto;
+    gap: 30px;
+}
+.recbox{
+    width: 95%;
+    background: #FFFFFF;
+border: 2px solid #740606;
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+padding: 5px 5px 30px 5px;
+height: fit-content;
+
+}
+.recbox-part1{display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 10px;
+}
+.recbox-part1 h3{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 30px;
+text-transform: capitalize;
+color: #740606;
+padding: 20px 0 20px 30px;
+}
+.recbox-part1 button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.recbox-part2{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin: 0 auto;
+}
+.recbox-part2>h4{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+
+color: #000000;
+}
+.recbox-part2>p{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 18px;
+
+color: #000000;
+}
+.recbox-part3{
+    display: flex;
+    margin-top: 10px;
+    
+}
+.recbox-part3 form{
+    /* display: flex;
+    align-items: center;
+    background-color: #740606;
+    width: fit-content;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    color: #FFFFFF;
+    border-radius: 5px;
+    border: none;
+    margin: 3px; */
+}
+.recbox-part3 button,.recbox-part3 a{
+ 
+margin: 10px ;
+
+
+background-color: transparent;
+
+border: none;
+padding: 3px 10px;
+cursor: pointer;
+}
+.see-all-link{
+    text-decoration: none;
+    margin: 0 auto;
+    font-family: 'Poppins';
+    color: #000000;
+    font-size: 18px;
+    text-transform: capitalize;
+    padding: 2px 8px;
+    border-radius: 8px;
+    border:1px solid #740606;
+    cursor: pointer;
+
+}
+.select-menu ,.select-menu-2{
+    width: 40%;
+    margin: 10px auto;
+}
+.select-menu .select-btn ,.select-menu-2 .select-btn-2{
+    display: flex;
+    background: #fff;
+    padding: 2px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-around;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.select-btn i{
+    font-size: 25px;
+    transition: 0.3s;
+}
+.select-menu.active .select-btn i .select-menu-2.active .select-btn-2 i{
+    transform: rotate(-180deg);
+}
+.select-menu .options , .select-menu-2 .options{
+    position: relative;
+    margin-top: 5px;
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    display: none;
+}
+.select-menu.active .options, .select-menu-2.active .options{
+    display: block;
+}
+.options .option{
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    padding: 0 16px;
+    border-radius: 8px;
+    align-items: center;
+    background: #fff;
+}
+.options .option:hover{
+    background: #F2F2F2;
+}
+.option i{
+    font-size: 25px;
+    margin-right: 12px;
+}
+.option .option-text{
+    font-size: 18px;
+    color: #333;
+}
+@media screen and (max-width:1100px){
+    .demanderec-section-part3{
+        grid-template-columns: 40% 40%;
+    }
+}
+@media screen and (max-width:900px){
+    .demanderec-section-part3{
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/patientlist.css" />
+    <link rel="stylesheet" href="/css/demanderec.css" />
+    <title>SinaLab</title>
+</head>
+<body>
+    
+    <%- include('partials/nav.ejs') %>
+    <section class="partientlist-section">
+        <p style="text-align: center; color: green; font-size: 13px; z-index: 1111; position: absolute;top: 10px; left: 40%;"><%=success%></p>
+    <p style="text-align: center; color: red; font-size: 13px; z-index: 1111; position: absolute;top: 10px; left: 40%;"><%=error%></p>
+        <div class="partientlist-section-part1">
+    <div>
+    <h2>Bienvenu  ,<%=user.type%> - <%=user.username%></h2>
+    <p>
+        Une autre phrase pour souhaiter la bienvenue ou je ne sais quoi mais
+        c’est une phrase
+      </p>
+    </div>
+    </div>
+    <div class="demanderec-section-part2">
+        <h2>feedBacks</h2>
+    </div>
+    <div class="demanderec-section-part3">
+    <% for (let feed of feeds){ %>
+    <div  class="recbox" style="padding: 0; padding-bottom: 20px;"> 
+
+        <div class="recbox-part1" >
+            <div style="display: flex; flex-direction: column;">
+                <h3 style="padding:5px 0 0 0; color: black;"><span style="color:#740606;">name: </span><%=feed.name%></h3>
+                <h3 style="padding: 0; padding-bottom: 10px;color: black;"><span style="color:#740606;">email: </span> <%=feed.email%> </3h>
+            </div>
+            <form action="/feedBack/<%=feed._id%>?_method=DELETE" method="POST">
+                <button><img alt="" src="roundsupp.svg"></button>
+            </form> 
+           
+        </div>
+        <hr style="color: rgba(155, 162, 168, 0.824);">
+        <div class="recbox-part2">
+            <p style="font-size: 16px; padding-top: 8px; font-family:'Poppins'; font-weight: 500; "><%=feed.message%>
+            </p>
+        </div>
+
+        
+        
+        
+       
+        </div> <% } %>
+        
+    </div>
+
+
+   
+    </div>
+
+
+    
+</section>
+    
+</body>
+</html>

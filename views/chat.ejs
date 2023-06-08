@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/patientlist.css" />
+    <link rel="stylesheet" href="/css/chat.css" />
+    <title>SinaLab</title>
+  </head>
+  <body>
+    <%- include('partials/nav.ejs') %>
+    <section class="partientlist-section">
+      <div id="container">
+         
+        <main>
+         <header><div><img alt="" src="<%=to.photo%>"><h2><%=to.username%></h2></div></header>
+          <ul id="chat">
+            <% for (let msg of messages){ %>
+            <li
+              class="<%if(me.username===msg.owner.username){%>me<%}else{%>you<%}%>"
+            >
+              <div class="entete">
+                <span class="status green"></span>
+                <h2><%=msg.owner.username%></h2>
+                <h3>
+                  <%=months[msg.date.getMonth()]%> <%=msg.date.getDate()%>
+                  <%=msg.date.getHours()%>:<%=msg.date.getMinutes()%>
+                </h3>
+              </div>
+              <div class="triangle"></div>
+              <div class="message"><%=msg.content%></div>
+            </li>
+
+            <% } %>
+          </ul>
+
+          <form action="/chatList/<%=id1%>/<%=id2%>" method="Post">
+            <footer>
+              <textarea
+                placeholder="Type your message"
+                name="message"
+              ></textarea>
+              <span>
+                <button type="submit" class="submit-button-message">
+                  <img alt="" src="/send.svg" />
+                </button>
+              </span>
+            </footer>
+          </form>
+        </main>
+      </div>
+    </section>
+    <script src="/js/chat.js"></script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SinaLab</title>
+</head>
+<body>
+    <style>
+        .error-section{
+            position: relative;
+    display: flex;
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+    flex-direction: column;
+    box-sizing: border-box;
+        }
+        .Error-page{
+    height: fit-content;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.error-con{
+    padding-top: 90px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 85vh;
+    flex-direction: column;
+}
+.error-con h2{
+    font-family: 'Poppins';
+    font-style: normal;
+font-weight: 600;
+font-size: 60px;
+text-align: center;
+
+color: #740606;
+}
+.error-con p{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 44px;
+text-align: center;
+width: 60%;
+
+color: #000000;
+}
+.error-con img{
+    
+   
+    width: 100%;
+    animation-iteration-count: infinite;
+}
+.error-con-img{
+    display: flex;
+   align-items: center;
+    animation: scroll 10s linear infinite;
+    animation-fill-mode: backwards;
+}
+.error-con >div:hover{
+    animation-play-state: paused;
+}
+@keyframes scroll {
+    0% {
+      transform: translateX(0); 
+    }
+    100% {
+      transform: translateX(-100%); 
+    }
+  }
+  @media screen and (max-width:600px){
+    .error-con h2{
+        font-size: 22px;
+    }
+    .error-con p{
+        font-size: 15px;
+    }
+  }
+    </style>
+    <%- include('partials/nav.ejs') %>
+    <div class="error-section">
+        <div class='error-con'>
+            <h2>Erreur 404</h2>
+            <div class="error-con-img">
+            <img alt='' src="../error.svg"/>
+            <img alt='' src="../error.svg"/>
+            <img alt='' src="../error.svg"/>
+            <img alt='' src="../error.svg"/>
+            </div>
+            
+            <p>OUPS !!, la page que vous cherchez semble avoir été déplacée ou supprimée. Veuillez nous excuser pour la gêne occasionnée</p>
+          </div>
+    </div>
+</body>
+</html>

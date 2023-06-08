@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/registre.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>SinaLab</title>
+   </head>
+<body>
+  <div class="container">
+    <p><%=success%></p>
+    <p><%=error%></p>
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="/register" method="post">
+        <div class="user-details">
+          
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input name="username" type="text" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="tel" name="phone" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" name="password" minlength="8" placeholder="Enter your password" required>
+          </div>
+          
+        </div>
+        <section>
+          <label for="type">Chouse a type</label>
+          <select id="type" name="type" >
+              <option value="Patient">Patien</option>
+              <option value="Admin">Administrateur</option>
+              <option value="Medecin">Medecin</option>
+              
+          </select>
+      </section>
+
+      <section class="medecin-assoscie">
+          <label id="medecin" for="medecin">medecin</label>
+          <input id="medecin" name="medecin" type='text' autofocus>
+      </section>
+        
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    var section = document.querySelector(".medecin-assoscie");
+    var type = document.querySelector("#type");
+    
+    var option= type.options[type.options.selectedIndex].value;
+    type.addEventListener("change",function(e){
+        var option= type.options[type.options.selectedIndex].value;
+        console.log("change")
+        if(option==="Patient"){
+            section.style.display="block";
+
+        }else{
+            section.style.display="none";
+        }
+
+
+
+    })
+   
+</script>
+
+</body>
+</html>

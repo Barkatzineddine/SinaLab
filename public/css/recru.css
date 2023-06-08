@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+.recru-form-con{position: relative;
+    display: flex;
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+    flex-direction: column;
+}
+.recru-form-con>img{
+    width: 80px;
+    height: 80px
+}
+.person-info{
+    display: flex;
+    align-items: center;
+    padding: 80px 0 30px 60px;
+    gap: 20px;
+}
+.person-info>h2{
+    font-family: 'Poppins';
+    text-transform: capitalize;
+}
+.ldm-cv-con{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+.ldm-con-voir,.cv-con-voir{
+    padding-left: 30px;
+}
+.ldm-con-voir>h4,.cv-con-voir>h4{
+    font-family: 'Poppins';
+    font-size: 22px;
+    font-weight: 500;
+}
+.ldm-con-voir-con, .cv-con-voir-con{
+    padding: 10px;
+    border: 2px solid #740606;
+    border-radius: 9px;
+}
+.ldm-con-voir-con>a,.cv-con-voir-con>a{
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'Poppins';
+    color: #000;
+    cursor: pointer;
+}
+.cv-con-voir-con button,.ldm-con-voir-con button{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    /* identical to box height */
+    margin: 20px 30px 20px ;
+    
+    color: #FFFFFF;
+    background: #740606;
+    border-radius: 5px;
+    border: none;
+    padding: 7px 10px;
+    cursor: pointer;
+}
+.recru-form-con>form>button{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    /* identical to box height */
+    margin: 50px ;
+    
+    color: #FFFFFF;
+    background: #740606;
+    border-radius: 5px;
+    border: none;
+    padding: 7px 10px;
+    cursor: pointer;
+}
+.recru-form-con>form{
+    display: flex;
+    justify-content: center;
+}

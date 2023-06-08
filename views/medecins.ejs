@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/patientlist.css" />
+    <link rel="stylesheet" href="/css/gerantpalist.css" />
+    <script src="/js/gerantpalist.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <%- include('partials/nav.ejs') %>
+    <section class="gearntpalist-section">
+      <div class="partientlist-section-part1">
+        <div>
+          <h2>Bienvenue , Nom du patient!</h2>
+          <p>
+            Une autre phrase pour souhaiter la bienvenue ou je ne sais quoi mais
+            c’est une phrase
+          </p>
+        </div>
+        
+      </div>
+      <div class="gerantpatlist-section-part2">
+        <div>
+          <button class="listpa">Gérer les comptes Medecins </button>
+          
+          
+        </div>
+        <div><input placeholder="search" type="text" onkeyup="search()" class="search-pa-doc"></div>
+      </div>
+      <div class="gerantpatlist-section-part3">
+        <% for (let med of medecins){ %>     
+           
+            <article class="patient">    
+
+            <div class="left-side-article">
+              <div> 
+                <img alt="" src="<%=med.photo%>" class="left-side-article-img">
+              <a href="/medecins/<%=med._id%>"> <h3><%=med.username%></h3></a>
+              </div>
+               <span><%=med.email%></span>
+            </div>
+               <form action="/medecins/<%=med._id%>?_method=DELETE" method="POST">
+                <button><img alt="" src="icons8trash.svg"></button>
+               </form>
+               
+               <hr>
+            
+
+            </article>
+        
+        
+            <% } %>
+      </div>
+    </section>
+
+
+   
+    
+  </body>
+</html>
+
+
+

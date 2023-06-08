@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+   
+    <link rel="stylesheet" href="/css/home.css" />
+   
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <%- include('partials/nav.ejs') %>
+    
+    <section class="home-section">
+      <p style="text-align: center; color: green; font-size: 13px; z-index: 11111; position: absolute;top: 10px; left: 45%;"><%=success%></p>
+    <p style="text-align: center; color: red; font-size: 13px; z-index: 11111; position: absolute;top: 10px; left: 45%;"><%=error%></p>
+      <div class="large-home-section">
+        <div class="bienvenuecard">
+          <div class="bienvenuedate"></div>
+          <h3>BIENVENUE , <%=user.type%>-<%=user.username%></h3>
+          <p>Passez une bonne journée !</p>
+        </div>
+        <div class="home-section-part-info">
+          <div class="meduim-btn-con">
+            
+            <%if(user.type==="Admin"){%> <a href="/patients"><button class="btn-home-patient">patients</button></a> <%}%>
+            <%if(user.type==="Admin"){%> <a href="/feedBack"><button class="btn-home-patient">feedBack</button></a> <%}%>
+            <%if(user.type==="Medecin"){%> <a href="/patients"><button class="btn-home-patient">patients</button></a> <%}%>
+            <%if(user.type==="Medecin"){%> <a href="/chatList"><button class="btn-home-patient">chatList</button></a> <%}%>
+            <%if(user.type==="Patient"){%> <a href="/results"><button class="btn-home-patient">results</button></a> <%}%>
+            <%if(user.type==="Patient"){%> <a href="/chatList"><button class="btn-home-patient">chatList</button></a> <%}%>
+           
+            <%if(user.type==="Admin"){%>  <a href="/medecins"><button class="btn-home-patient">médecins</button></a><%}%>
+          
+          </div>
+          <div class="small-box-con">
+            <div class="small-box-hom">
+              <h3>Conseil du jour !</h3>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text
+                ever since the 1500s,
+              </p>
+            </div>
+            
+              <%if(user.type==="Admin"){%>
+                <div class="small-box-hom">
+                   <a href="/reservations" style="text-decoration: none;"><h3>Gerer les reservations</h3></a> 
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text
+                ever since the 1500s,
+              </p>
+            </div>
+              <%}%>
+            
+          </div>
+        </div>
+      </div>
+      <div class="small-home-section">
+        <div class="small-home-con">
+          <div>
+            <h3>Mon Profil</h3>
+            <a href="/updateProfile"><i  style="color: #740606" class="bx bx-edit"></i></a>
+          </div>
+          <div>
+            <img alt="" src="<%=theUser.photo%>" />
+            <div class="small-home-info-con">
+              <h3><%=user.username%></h3>
+            <p><%=user.email%></p>
+            </div>
+            <div>
+             
+            </div>
+          </div>
+          <div>
+            <p>
+              informations relatives au patient , son age , ou le nombre
+              d’analyses effectuées , tout dépends des données qu’on aura décidé
+              de mettre ici !
+            </p>
+          </div>
+        </div>
+        <%if(user.type==="Admin"){%>
+        <div class="small-home-con">
+          <div>
+            <h3>Les publications</h3>
+            <a href="/Publication"><i  style="color: #740606" class="bx bx-edit"></i></a>
+          </div>
+          <div>
+            <h4>
+              informations relatives au patient , son age , ou le nombre
+              d’analyses 
+            </h4>
+          </div>
+        </div>
+        <%}%>
+      </div>
+    </section>
+    <script src="/js/home.js"></script>
+  </body>
+</html>

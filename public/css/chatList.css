@@ -1,0 +1,145 @@
+.ChatList-section{
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+    flex-direction: column;
+}
+.chat-list-part-1{
+   
+    margin: 30px 100px;
+ 
+}
+.chat-list-part-1>:nth-child(1)>h2{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 38px;
+color: #740606;
+text-transform: uppercase;
+}
+
+.chat-list-part-2{
+    width: 90%;
+    height: fit-content;
+    max-height: 60vh;
+    display: flex;
+    margin: 0px auto;
+    padding: 5px 25px;
+    gap: 10px;
+    }
+    .doctor-list{
+        width: 100%;
+        overflow-y: scroll;
+        height: fit-content;
+        max-height: 44vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+    margin: 5px auto;
+    padding: 15px 15px;
+    
+    }
+    .admin-list, .doctor-list{
+        width: 100%;
+        
+        height: fit-content;
+        max-height: 44vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    margin: 5px auto;
+    padding: 15px 15px;
+    gap: 10px;
+    
+    }
+    .chat-list-part-2 article{
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 10px 5px 30px;
+        align-items: center;
+        width: 90%;
+        background: #FFFFFF;
+        border: 1px solid #D8D8D8;
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+        position: relative;
+    }
+    .chat-list-part-2 article>div:nth-child(1){
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .chat-list-part-2 article>div>h3{
+        font-size: 18px;
+        font-weight: 500;
+    }
+.chat-list-part-2 article button{
+padding: 3px 5px;
+background: none;
+border: none;
+    }
+    .search-admin-doc{
+        border: 1.7px solid rgba(235, 157, 157, 0.14);
+    border-radius: 4px;
+    width: 250px;
+    height: 38px;
+    padding-left: 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-block: 5px 30px;
+   
+    }
+    .chat-search-con{
+        margin-bottom: 40px;
+        margin-top: 5px;
+    }
+    .admin-list article>div img{
+        width: 70px;
+        height: 70px;
+        position: relative;
+        border-radius: 50px;
+        
+    }
+    .admin-list article>div>h3{
+        font-size: 12px;
+    }
+    .doctor-list-con{
+        width: 50%;
+        background: #FFFFFF;
+        
+       
+    }
+    .admin-list-con{
+        width: 50%;
+        background: #FFFFFF;
+
+    }
+    .doctor-list-con>h2,.admin-list-con>h2{
+        font-size: 24px;
+        font-weight: 600;
+        font-family: 'Poppins';
+        padding-block: 7px 2px;
+        width: fit-content;
+       color: #740606;
+        margin: 0 0 0 30px;
+        text-transform: capitalize;
+        
+    }
+.admin-list article::before{
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 100%;
+        left: 13px;
+        display: inline-block;
+        background: #740606;
+    }

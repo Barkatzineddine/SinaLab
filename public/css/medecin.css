@@ -1,0 +1,83 @@
+.medecin-section{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+.medecin-con-info{
+    display: flex;
+    padding: 50px 30px;
+    gap: 10px;
+    align-items: center;
+}
+
+.medecin-con-info img{
+    width: 110px;
+    height: 100px;
+    border-radius: 50px;
+}
+.con-info-container h3{
+    font-size: 20px;
+    font-family: 'Poppins';
+    font-weight: 500;
+}
+.patient-of-medecin-con{
+    width: 70%;
+        overflow-y: scroll;
+        height: fit-content;
+        max-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    border-radius: 5px;
+    margin: 30px auto;
+    padding: 20px 25px;
+    gap: 10px;
+}
+.patient-of-medecin-con::-webkit-scrollbar{
+    display: none;
+  }
+.medecin-section h2{
+    font-size: 26px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+    color: #740606;
+}
+.patient-of-medecin-con article{
+    display: flex;
+        justify-content: space-around;
+       position: relative;
+    padding: 5px 10px 5px 20px;
+        align-items: center;
+        width: 80%;
+        background: #FFFFFF;
+        border: 1px solid #D8D8D8;
+}
+.patient-of-medecin-con article::before{
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    left: 23px;
+    display: inline-block;
+    background: #740606;
+}
+.patient-of-medecin-con article img{
+    width: 50px;
+}
+.patient-of-medecin-con article>div{
+    display: flex;
+        align-items: center;
+        gap: 20px;
+}
+.patient-of-medecin-con a{
+    text-decoration: none;
+    color: black;
+}

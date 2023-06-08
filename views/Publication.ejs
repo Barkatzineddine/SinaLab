@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/publications.css" />
+    <title>Sinalab</title>
+</head>
+<body>
+    <%- include('partials/nav.ejs') %>
+    <div class="publications-form">
+        <p style="text-align: center; color: green; font-size: 13px; z-index: 1111; position: absolute;top: 10px; left: 40%;"><%=success%></p>
+    <p style="text-align: center; color: red; font-size: 13px; z-index: 1111; position: absolute;top: 10px; left: 40%;"><%=error%></p>
+    <div class="con-form-pubs">
+        <div class="new-pubs">
+            <h2>creation des publications</h2>
+            <form action="/publications" method="POST" enctype="multipart/form-data">
+
+                <input type="file" id="my-files" name="img">
+                <label for="title">title</label>
+                <input type="text" id="username" name="title" required>
+                <label for="content">content</label>
+                <textarea  id="content" name="content" placeholder="write the content here ..." required></textarea>
+                <label for="description">Description</label>
+                <textarea  id="description" name="description" placeholder="write the description here ..." ></textarea>
+                <button>publier</button>
+            </form>
+        </div>
+        <div class="delete-pubs">
+            <h2>supprimer une publications</h2>
+            <form action="/publications?_method=DELETE" method="POST">
+    
+           
+                <label for="title">title</label>
+                <input type="text" id="username" name="title" required>
+               
+                <button>supprimer</button>
+            </form>
+        </div>
+    </div>
+    </div>
+    
+</body>
+</html>

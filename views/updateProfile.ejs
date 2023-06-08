@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/setting.css" />
+    <title>SinaLab</title>
+  </head>
+  <body>
+    <%- include('partials/nav.ejs') %>
+    
+    <section class="setting-section">
+      <p style="text-align: center; color: green; font-size: 13px; z-index: 11111; position: absolute;top: 10px; left: 45%;"><%=success%></p>
+    <p style="text-align: center; color: red; font-size: 13px; z-index: 11111; position: absolute;top: 10px; left: 45%;"><%=error%></p>
+      <div class="partientlist-section-part1">
+        <div>
+          <h2>Bienvenue , <%=user.username%></h2>
+          <p>
+            Une autre phrase pour souhaiter la bienvenue ou je ne sais quoi mais
+            c’est une phrase
+          </p>
+        </div>
+        <div></div>
+      </div>
+      <div class="setting-part2">
+        <div class="setting-part21">
+          <h3>PARAMETRES</h3>
+          <div class="con-modifier-compte">
+            <i class='bx bx-user' style='color:#000'  ></i>
+            <p class="modifier-compte" >Compte</p>
+            
+          </div>
+          <div>
+            <p class="modifier-password" >
+             <a href="/updateProfile"> modifier Compte</a>
+              
+            </p>
+            <i class='bx bx-chevron-right' style='color:#454545'  ></i>
+          </div>
+          <div>
+            <p class="modifier-password" >
+              <a href="/updatePassword">modifier mot de passe</a>
+              
+            </p>
+            <i class='bx bx-chevron-right' style='color:#454545'  ></i>
+          </div>
+         
+        </div>
+        <div class="setting-part22">
+          <h3>Modifier le profil</h3>
+          <img alt="" src="<%=theUser.photo%>" />
+
+          <form action="/updateProfile" method="POST" enctype="multipart/form-data" class="form-show-info-profile">
+
+            <div class="input">
+              
+              <input id="photo" type="file" name="photo" autofocus>
+            </div>
+         
+          <div class="input-wrapper">
+            <label for="email">email</label>
+            <input id="email" type="email" name="email" value="<%=theUser.email%>" required autofocus/>
+          </div>
+         
+          <div class="input-wrapper">
+            <label for="phone">phone</label>
+            <input id="phone" type="number"  value="<%=theUser.phone%>" name="phone" required autofocus/>
+          </div>
+          <%if(user.type==="Patient"){%>
+          <div class="input-wrapper">
+            <label for="medecin">ajouter un Medecin associee</label>
+            <input id="medecin" type="text"  name="medecin"  autofocus/>
+          </div>
+          <%}%>
+
+          <button class="submit-new-info">update</button>
+        </form>
+        </div>
+      </div>
+    </section>
+    <script src="/js/setting.js"></script>
+  </body>
+</html>

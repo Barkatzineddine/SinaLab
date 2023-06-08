@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reservations.css" />
+    <title>SinaLab</title>
+</head>
+<body>
+    <%- include('partials/nav.ejs') %>
+   <div class="reservation-receive-section">
+    <h2>Liste de reservations </h2>
+    <div class="reservation-demande-con">
+        <%for(let res of reservations){%>
+
+            <div class="reservation-demande-item">
+                <div>
+                    <img alt="" src="../homeperson.svg" />
+                </div>
+                <hr>
+                <div class="reservation-demande-item-info">
+                    <h3><span>name:</span> <%=res.name%></h3>
+                    <hr>
+                <h3><span>email:</span><%=res.email%></h3>
+                <hr>
+                <h3><span>phone:</span><%=res.phone%></h3>
+                <hr>
+                <p><span>adresse:</span><%=res.adresse%></p>
+                </div>
+                <form action="/reservations/<%=res._id%>?_method=DELETE" method="POST">
+                    <button style="background-color: none; border: none;"><img alt="" src="roundsupp.svg"></button>
+                </form>
+        
+            </div>
+        
+            <%}%>
+    </div>
+   </div>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/patient.css" />
+    <link rel="stylesheet" href="/css/medecin.css" />
+    <title>sinalab</title>
+</head>
+<body>
+    <%- include('partials/nav.ejs') %>
+    <div class="patiet-list-con-section">
+        <p style="text-align: center; color: green; font-size: 13px; z-index: 1111; position: absolute;top: 10px; left: 40%;"><%=success%></p>
+        <p style="text-align: center; color: red; font-size: 13px; z-index: 1111; position: absolute;top: 10px; left: 40%;"><%=error%></p>
+    <div class="medecin-con-info">
+        <h1>welcome to results</h1>
+    </div>
+    <div class="section-con-result">
+    <% for (let result of patient.results){ %>
+    <div class="article-con-result"> 
+        <a href="/results/<%=result._id%>"> <%=result.name%> </a> 
+       <div>
+        <form action="/results/<%=result._id%>" method="POST">
+            <button><img alt="" src="/icons8-download.png"></button>
+        </form> 
+
+        <form action="/results/<%=result._id%>?_method=DELETE" method="POST">
+            <button><img alt="" src="/icons8trash.svg"></button>
+        </form> 
+       </div>
+    </div>
+
+
+    <% } %>
+</div>
+    </div>
+    
+</body>
+</html>

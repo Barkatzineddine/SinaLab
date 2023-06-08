@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stats.css" />
+    <title>SinaLab</title>
+</head>
+<body>
+    <%- include('partials/nav.ejs') %>
+
+  <div class="section-states">
+    <div class="type-state">
+        <%if(type === "one"){%>
+            <form action="/stats" method="POST">
+        
+                <label for="type" class="chouse-stat">Chouse a stat</label>
+                <select id="type" name="type" >
+                    <option value="one">one</option>
+                    <option value="two">two</option>
+                    <option value="three">three</option>
+                    
+                </select>
+            
+                <button>switch</button>
+            
+               </form> 
+        
+            <form action="/stats/ab" method="POST" enctype="multipart/form-data">
+                <label for="csv class="chouse-stat"">Chouse a stat</label>
+                <input id="csv" type="file" name="csv">
+                <button>apply</button>
+        
+            </form>
+        
+        
+        <script src="/d3.v7.min.js"></script>
+        <div id="my_data"></div>
+        
+    </div>
+    <script src="/js/ab.js"></script>
+    <link rel="stylesheet" href="/css/ab.css">
+    <%}else if(type === "two"){%>
+    
+        <form action="/stats" method="POST">
+    
+            <label for="type">Chouse a stat</label>
+            <select id="type" name="type" >
+                
+                <option value="two">two</option>
+                <option value="one">one</option>
+                <option value="three">three</option>
+                
+            </select>
+        
+            <button>switch</button>
+        
+           </form> 
+    
+        <form action="/stats/ac" method="POST" enctype="multipart/form-data">
+            <label for="csv">Chouse a stat</label>
+            <input id="csv" type="file" name="csv">
+            <button>apply</button>
+    
+        </form>
+    
+        <script src="/d3.v4.js"></script>
+    
+    <select id="Button"></select>
+    
+    <div id="my_data"></div>
+    
+    <script src="/d3-scale-chromatic.v1.min.js"></script>
+    
+    <script src="/js/ac.js"></script>
+    <link rel="stylesheet" href="/css/ac.css">
+    
+        <%}else if(type === "three"){%>
+    
+            <form action="/stats" method="POST">
+    
+                <label for="type">Chouse a stat</label>
+                <select id="type" name="type" >
+    
+                    <option value="three">three</option>
+                    <option value="two">two</option>
+                    <option value="one">one</option>
+                    
+                    
+                </select>
+            
+                <button>switch</button>
+            
+               </form> 
+    
+            <form action="/stats/as" method="POST" enctype="multipart/form-data">
+                <label for="csv">Chouse a stat</label>
+                <input id="csv" type="file" name="csv">
+                <button>apply</button>
+        
+            </form>
+    
+            <script src="/d3.v4.js"></script>
+    
+    
+            <div id="my_data"></div>
+            
+            <script src="/js/as.js"></script>
+            <link rel="stylesheet" href="/css/as.css">
+                
+    
+    
+            <%}else{%>
+    
+                <form action="/stats" method="POST">
+    
+                    <label for="type">Chouse a stat</label>
+                    <select id="type" name="type" >
+                        
+                       
+                        <option value="one">one</option>
+                        <option value="two">two</option> 
+                        <option value="three">three</option>
+                        
+                        
+                        
+                    </select>
+                
+                    <button>switch</button>
+                
+                   </form>
+    
+                <form action="/stats/ab" method="POST" enctype="multipart/form-data">
+                    <label for="csv">Chouse a stat</label>
+                    <input id="csv" type="file" name="csv">
+                    <button>apply</button>
+            
+                </form>
+                <script src="/d3.v7.min.js"></script>
+                <div id="my_data"></div>
+    
+                <script src="/js/ab.js"></script>
+                <link rel="stylesheet" href="/css/ab.css">
+                <%}%>
+        
+  </div>
+</body>
+</html>

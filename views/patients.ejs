@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/gerantpalist.css" />
+    <link rel="stylesheet" href="/css/patientlist.css" />
+    <script src="/js/gerantpalist.js"></script>
+    
+    <title>SinaLab</title>
+  </head>
+  <body>
+    <%- include('partials/nav.ejs') %>
+    <section class="gearntpalist-section">
+      <div class="partientlist-section-part1">
+        <div>
+          <h2>Bienvenue , Nom du patient!</h2>
+          <p>
+            Une autre phrase pour souhaiter la bienvenue ou je ne sais quoi mais
+            c’est une phrase
+          </p>
+        </div>
+        <div></div>
+      </div>
+      <div class="gerantpatlist-section-part2">
+        <div>
+          <p class="listpa">Gérer les comptes Patients</p>
+          
+          
+        </div>
+        <div><input placeholder="search" type="text" onkeyup="search()" class="search-pa-doc"></div>
+      </div>
+      <div class="gerantpatlist-section-part3">
+        <% for (let patient of patients){ %>     
+           
+            <article class="patient">    
+
+            <div class="left-side-article">
+              <div> 
+                <img alt="" src="<%=patient.photo%>" class="left-side-article-img">
+              <a href="/patients/<%=patient._id%>"> <h3><%=patient.username%></h3></a>
+              </div>
+               <span><%=patient.email%></span>
+            </div>
+               <form action="/patients/<%=patient._id%>?_method=DELETE" method="POST">
+                <button><img alt="" src="icons8trash.svg"></button>
+               </form>
+               
+               <hr>
+            
+
+            </article>
+        
+        
+            <% } %>
+      </div>
+    </section>
+
+
+ 
+
+   
+
+   
+    
+  </body>
+</html>
+
+
+

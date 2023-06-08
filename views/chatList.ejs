@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/chatList.css">
+    <title>SinaLab</title>
+</head>
+<body>
+    <%- include('partials/nav.ejs') %>
+    
+    <section class="ChatList-section">
+        <div class="chat-list-part-1">
+            <div>
+              <h2>Chatbox</h2>
+              <input placeholder="search" type="text" class="search-admin-doc">
+            </div>
+            
+        </div>
+
+        
+
+   
+
+ <%if(theUser.type==="Patient"){%>
+
+    <div class="chat-list-part-2">
+        <div class="admin-list-con">
+            <h2>Admin Lists</h2>
+        <div class="admin-list">
+        
+    <% for (let admin of admins){ %>
+        <article>
+            <div>
+                <img alt="" src="<%=admin.photo%>">
+                <h3><%=admin.username%></h3>
+            </div>
+           
+           
+           <form action="/chatList/<%=theUser._id%>/<%=admin._id%>" method="GET">
+            <button><i class='bx bx-send' style='color:#740606;transform: rotate(-30deg);'  ></i></button>
+           </form>
+           
+        </article>
+    
+        <% } %>
+
+        </div>
+            </div>
+
+        <hr>
+        <div class="doctor-list-con">
+        <h2>medecins</h2>
+
+        <div class="admin-list">
+        <% for (let medecin of medecins){ %>
+            <article>
+                <div>
+                    <img alt="" src="<%=medecin.photo%>">
+                    <h3><%=medecin.username%></h3>
+                </div>
+               
+               
+               <form action="/chatList/<%=theUser._id%>/<%=medecin._id%>" method="GET">
+                <button><i class='bx bx-send' style='color:#740606;transform: rotate(-30deg);'  ></i></button>
+               </form>
+               
+            </article>
+            <hr>
+        
+        
+            <% }%>
+        </div>
+        </div>
+    </div>
+            
+            <%}else if(theUser.type==="Medecin"){%>
+
+                <div class="chat-list-part-2">
+                    <div class="admin-list-con">
+                        <h2>Docteurs Lists</h2>
+                    <div class="admin-list">
+                    
+                <% for (let admin of admins){ %>
+                <article>
+                <div>
+                    <img alt="" src="../homeperson.svg">
+                       <h3><%=admin.username%></h3>
+                    
+                    </div>
+                       <form action="/chatList/<%=theUser._id%>/<%=admin._id%>" method="GET">
+                        <button><i class='bx bx-send' style='color:#740606;transform: rotate(-30deg);' ></i></button>
+                       </form>
+                      
+                    </article>
+                
+                
+                    <% } %>
+            
+                    </div>
+                        </div>
+            
+                    <hr>
+                    <div class="doctor-list-con">
+                    <h2>patients</h2>
+                    <div class="admin-list">
+                    <% for (let pat of patients){ %>
+                        <article>
+                        <div> 
+                            <img alt="" src="../homeperson.svg">
+                           <h3><%=pat.username%></h3>
+                           
+                        </div>
+                           <form action="/chatList/<%=theUser._id%>/<%=pat._id%>" method="GET">
+                            <button><i class='bx bx-send' style='color:#740606;transform: rotate(-30deg);'  ></i></button>
+                           </form>
+                        </article>
+                        
+                        <hr>
+                    
+                    
+                        <% }%>
+                    </div>
+                    </div>
+                </div>
+                        
+            
+                  
+
+                <%}else if(theUser.type==="Admin"){%>
+
+                    <div class="chat-list-part-2">
+                        <div class="admin-list-con">
+                            <h2>Patients</h2>
+                        <div class="admin-list">
+                        
+                    <% for (let pat of patients){ %>
+                        <article>
+                    <div>
+                        <img alt="" src="<%=pat.photo%>">
+                           <h3><%=pat.username%></h3>
+                        </div>
+                           
+                           <form action="/chatList/<%=theUser._id%>/<%=pat._id%>" method="GET">
+                            <button><i class='bx bx-send' style='color:#740606;transform: rotate(-30deg);' ></i></button>
+                           </form>
+                          
+                        </article>
+                    
+                    
+                        <% } %>
+                
+                        </div>
+                            </div>
+                
+                        <hr style="background: #740606;">
+                        <div class="doctor-list-con">
+                        <h2>medecins</h2>
+                        <div class="admin-list">
+                        <% for (let med of medecins){ %>
+                            <article>
+                            <div> 
+                                <img alt="" src="<%=med.photo%>">
+                               <h3><%=med.username%></h3>
+                            </div>
+                               <form action="/chatList/<%=theUser._id%>/<%=med._id%>" method="GET">
+                                <button><i class='bx bx-send' style='color:#740606;transform: rotate(-30deg);'  ></i></button>
+                               </form>
+                            </article>
+                            
+                            <hr>
+                        
+                        
+                            <% }%>
+                        </div>
+                        </div>
+                    </div>
+                            
+
+                    <%}%>
+
+      
+          
+        
+  
+    </section>
+
+
+   
+
+
+   
+</body>
+</html>

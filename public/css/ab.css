@@ -1,0 +1,42 @@
+svg {
+    width: 50%;
+    height: 50%;
+    background-color: #F7EBED;
+  }
+  text {
+    font-family: 'Poppins';
+    font-size: 10px;
+    fill: black;
+  }
+  .grid path {
+    stroke-width: 0;
+    stroke: black;
+  }
+  .grid .tick line {
+    stroke: black;
+    stroke-width: 0.3px;
+    stroke-opacity: 0.3;
+  }
+  text.chart-title {
+    font-size: 14px;
+    font-weight: bold;
+    fill:#222222
+  }
+  text.chart-label {
+    font-size: 10px;
+    font-weight: 400;
+    fill: black;
+  }
+  .tooltip {
+    background-color: #ffffff;
+    font-family: 'Poppins';
+    font-size: 11px;
+    padding: 4px;
+    color: black;
+    border: none;
+    box-shadow: 0px 0px 3px 0px #E6E6E6;
+    text-align: center;
+  }
+  .legend{
+    font-size: 10px;
+  }

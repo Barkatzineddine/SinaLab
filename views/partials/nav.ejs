@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/nav.css" />
+    <!-- Boxicons CDN Link -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Sinalab</title>
+    
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+          <img alt="" src="logono.svg" class="bx bxl-c-plus-plus icon"></img>
+          <div class="logo_name">Sinalab</div>
+          <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <a href="/">
+              <i class='bx bx-home'></i>
+              <span class="links_name">Home</span>
+            </a>
+            <span class="tooltip">Home</span>
+          </li>
+          <%if(user.type === "Medecin" ){%>
+            <li>
+              <a href="/patients">
+                <i class="bx bx-user"></i>
+                <span class="links_name">patients</span>
+              </a>
+              <span class="tooltip">patients</span>
+            </li>
+            <%}%>
+          <%if(user.type === "Admin" ){%>
+          <li>
+            <a href="/register">
+              <i class='bx bx-add-to-queue' ></i>
+              <span class="links_name">Register</span>
+            </a>
+            <span class="tooltip">Register</span>
+          </li>
+          <%}%>
+          <%if(user.type === "Admin" ){%>
+          <li>
+            <a href="/stats">
+              <i class="bx bx-grid-alt"></i>
+              <span class="links_name">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+          </li>
+          <%}%>
+          <%if(user.type === "Admin" ){%>
+          <li>
+            <a href="/patients">
+              <i class="bx bx-user"></i>
+              <span class="links_name">patients</span>
+            </a>
+            <span class="tooltip">patients</span>
+          </li>
+          <%}%>
+          <%if(user.type==="Admin"){%>
+          <li>
+            <a href="/medecins">
+              <i class='bx bxs-user' ></i>
+              <span class="links_name">medecins</span>
+            </a>
+            <span class="tooltip">medecins</span>
+          </li>
+          <%}%>
+          <%if(user.type==="Patient"){%>
+            <li>
+              <a href="/results">
+                <i class="bx bx-user"></i>
+                <span class="links_name">results</span>
+              </a>
+              <span class="tooltip">results</span>
+            </li>
+            <%}%>
+          <li>
+            <a href="/chatList">
+              <i class="bx bx-chat"></i>
+              <span class="links_name">Messagerie</span>
+            </a>
+            <span class="tooltip">Messagerie</span>
+          </li>
+          
+          <%if(user.type==="Admin"){%>
+            <li>
+              <a href="/Publication">
+                <i class='bx bx-news'></i>
+                <span class="links_name">publication</span>
+              </a>
+              <span class="tooltip">publication</span>
+            </li>
+            <li>
+              <a href="/reservations">
+                <i class='bx bx-folder-plus'></i>
+                <span class="links_name">reservations</span>
+              </a>
+              <span class="tooltip">reservations</span>
+            </li>
+          <li>
+  
+            <a href="/send-result">
+              <i class='bx bx-send'></i>
+              <span class="links_name">send result</span>
+            </a>
+            <span class="tooltip">send result</span>
+          </li>
+          
+          <li>
+            <a href="/recrutement">
+              <i class='bx bx-folder'></i>
+              <span class="links_name">recrutement</span>
+            </a>
+            <span class="tooltip">recrutement</span>
+          </li>
+          <%}%>
+          <li class="profile">
+            <div class="profile-details">
+              <div class="name_job name_jobs">
+                <div class="name"><%=user.username%></div>
+                <div class="job"><%=user.type%></div>
+              </div>
+            </div>
+            <a href="/logout">
+              <i  id="log_out" class="bx bx-log-out">
+            </i>
+          </a>
+          
+          </li>
+        </ul>
+      </div>
+      <script src="js/nav.js"></script>
+</body>
+</html>

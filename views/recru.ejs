@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/recru.css" />
+    <title>SinaLab</title>
+  </head>
+  <body>
+    <%- include('partials/nav.ejs') %>
+    <div class="recru-form-con">
+      <div class="person-info">
+        <img alt="" src="../homeperson.svg" />
+        <h2>nom : <%=recru.name%></h2>
+      </div>
+      <div class="ldm-cv-con">
+        <div class="ldm-con-voir">
+          <h4>Lettre de motivation :</h4>
+
+          <div class="ldm-con-voir-con">
+            <a href="/recrutement/ldm/<%=recru._id%>"
+              >voir la lettre de motivation</a
+            >
+            <form action="/recrutement/ldm/<%=recru._id%>" method="POST">
+              <button>telecharger Ldm</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="cv-con-voir">
+          <h4>CV :</h4>
+          
+          <div class="cv-con-voir-con">
+            <a href="/recrutement/cv/<%=recru._id%>">voir le cv</a>
+            <form action="/recrutement/cv/<%=recru._id%>" method="POST">
+              <button>telecharger CV</button>
+            </form>
+          </div>
+        </div>
+        
+      </div>
+      <form action="/recrutement/<%=recru._id%>?_method=DELETE" method="POST">
+        <button>supprimer de la liste</button>
+      </form>
+    </div>
+  </body>
+</html>

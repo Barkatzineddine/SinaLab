@@ -1,0 +1,12 @@
+svg {
+    width: 35%;
+    height: 35%;
+    background-color: white;
+
+    background-image: 
+
+    repeating-linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .25) 95px, rgb(239, 228, 228) 100px),
+    /*repeating-linear-gradient(0.25turn, rgba(255, 255, 255, .5), rgba(255, 255, 255, .25) 95px, rgb(222, 209, 209) 100px),*/
+    repeating-linear-gradient(0.75turn, rgba(255, 255, 255, .5), rgba(255, 255, 255, .25) 95px, rgb(226, 210, 210) 100px);
+    
+}
